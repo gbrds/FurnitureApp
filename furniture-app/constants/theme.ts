@@ -25,6 +25,24 @@ export const Colors = {
     tabIconDefault: '#9BA1A6',
     tabIconSelected: tintColorDark,
   },
+    /*
+    disabled_button: '#999999',
+    dark_white: '#f0f0f0',
+    some_gray: '#808080',
+    primary_blue: '#4f63ac',
+    main_blue_low_sat: '#8d9bb5',
+    white: '#fff',
+    orange: '#fca34d',
+    text_black: '#303030',
+    text_black_light: '#606060',
+    placeholder_black: '#c5c5c5',
+    divider_gray: '#dadada',
+    text_gray: '#909090',
+    text_gray_light: '#caccce',
+    pass_input_icon: '#ffffff00',
+    icon_gray_light: '#f5f5f5',
+    icon_black: '#242424',
+    google: '#3f4a59',*/
 };
 
 export const Fonts = Platform.select({
