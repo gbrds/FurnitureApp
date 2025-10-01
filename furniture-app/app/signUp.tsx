@@ -28,12 +28,14 @@ export default function signUp() {
 
     return (
         <View style={styles.container}>
-            <Link href="/"> {/* Link is buggy -> to big click area */}
-                <View style={{ flexDirection: "row", width: 303, gap: 16, justifyContent: "flex-start", alignItems: "center", marginBottom: 62 }}>
-                    <Image source={require("@/assets/images/backArrow.png")} style={{ width: 19, height: 18 }} />
-                    <Text style={{ fontFamily: "Montserrat", fontSize: 26, fontWeight: "500", color: Colors.primary }}>Sign Up</Text>
-                </View>
-            </Link>
+            <View style={{ width: 303, marginBottom: 15 }}>
+                <Link href="/" style={{ width: 140 }}>
+                    <View style={{ gap: 16, flexDirection: "row", justifyContent: "flex-start", alignItems: "center" }}>
+                        <Image source={require("@/assets/images/backArrow.png")} style={{ width: 19, height: 18 }} />
+                        <Text style={{ fontFamily: "Montserrat", fontSize: 26, fontWeight: "500", color: Colors.primary }}>Sign Up</Text>
+                    </View>
+                </Link>
+            </View>
 
             <View>
                 <Text style={styles.inputTitle}>Name</Text>

@@ -28,23 +28,16 @@ export default function signUp() {
 
     return (
         <View style={styles.container}>
-            <Link href="/"> {/* Link is buggy -> to big click area */}
-                <View style={{ flexDirection: "row", width: 303, gap: 16, justifyContent: "flex-start", alignItems: "center", marginBottom: 62 }}>
-                    <Image source={require("@/assets/images/backArrow.png")} style={{ width: 19, height: 18 }} />
-                    <Text style={{ fontFamily: "Montserrat", fontSize: 26, fontWeight: "500", color: Colors.primary }}>Sign Up</Text>
+                <View style={{ width: 303, marginBottom: 62 }}>
+                    <Link href="/" style={{ width: 140 }}>
+                        <View style={{ gap: 16, flexDirection: "row", justifyContent: "flex-start", alignItems: "center" }}>
+                            <Image source={require("@/assets/images/backArrow.png")} style={{ width: 19, height: 18 }} />
+                            <Text style={{ fontFamily: "Montserrat", fontSize: 26, fontWeight: "500", color: Colors.primary }}>Sign Up</Text>
+                        </View>
+                    </Link>
                 </View>
-            </Link>
 
             <View>
-                <Text style={styles.inputTitle}>Name</Text>
-                <TextInput
-                    value={name}
-                    onChangeText={setName}
-                    placeholder="Example Name"
-                    autoCapitalize="none"
-                    style={styles.input}
-                />
-
                 <Text style={styles.inputTitle}>E-mail</Text>
                 <TextInput
                     value={email}
@@ -57,14 +50,7 @@ export default function signUp() {
                 <PasswordInput password={password} setPassword={setPassword} />
             </View>
 
-            <View style={{ marginTop: 8, flexDirection: "row", alignItems: "center", justifyContent: "flex-start", width: 303, gap: 13 }}>
-                <CheckBox checked={agree} onChange={setAgree} />
-                <Text style={styles.signUpText}>I agree with {}
-                    <Link href="/termsService" style={styles.signUpLink}>Terms & Privacy</Link>
-                </Text>
-            </View>
-
-            <View style={{ marginTop: 20, marginBottom: 50, justifyContent: "center", alignItems: "center" }}>
+            <View style={{ marginTop: 43, marginBottom: 50, justifyContent: "center", alignItems: "center" }}>
                 <PrimaryButton title="Sign Up" onPress={() => {
                     router.push("/")
                     handleSubmit()
@@ -79,9 +65,9 @@ export default function signUp() {
                 <GoogleButton onPress={() => router.push(("/"))} />
             </View>
 
-            <View>
-                <Text style={styles.signUpText}>Already have an account? {}
-                    <Link href="/signIn" style={styles.signUpLink}>Sign In</Link>
+            <View style={{ marginBottom: 70 }}>
+                <Text style={styles.signUpText}>Don’t have an account? {}
+                    <Link href="/signUp" style={styles.signUpLink}>Sign Up</Link>
                 </Text>
             </View>
         </View>

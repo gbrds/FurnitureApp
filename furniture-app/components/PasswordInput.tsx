@@ -19,7 +19,7 @@ export default function PasswordInput({ password, setPassword } : { password: st
                 autoCorrect={false}
                 keyboardType="default"
             />
-            <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+            <TouchableOpacity onPress={() => setShowPassword(!showPassword)} style={styles.eyeButton}>
                 <Image
                     source={
                         showPassword
@@ -41,16 +41,23 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderStyle: "solid",
         borderColor: Colors.formInput,
-        paddingHorizontal: 15,
         marginBottom: 12,
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
     },
     input: {
+        paddingHorizontal: 15,
         color: Colors.placeholderGray,
+        borderRadius: 14,
         flex: 1,
         height: '100%',
+    },
+    eyeButton: {
+        position: "absolute",
+        right: 15,
+        top: "50%",
+        transform: [{ translateY: -13 }],
     },
     icon: {
         width: 24,
