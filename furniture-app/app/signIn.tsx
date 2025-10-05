@@ -1,18 +1,17 @@
-import React, {use, useState} from "react";
-import {View, Text, StyleSheet, Image, TextInput, TouchableOpacity} from "react-native";
+import React, { useState } from "react";
+import {View, Text, StyleSheet, TextInput} from "react-native";
 import { useRouter, Link } from "expo-router";
 import { useFonts } from "expo-font";
 import PrimaryButton from "@/components/PrimaryButton";
 import GoogleButton from "@/components/GoogleButton";
-import CheckBox from "@/components/CheckBox";
 import Colors from "@/constants/colors";
 import PasswordInput from "@/components/PasswordInput";
+import BackButton from "@/components/BackButton";
 
 export default function signUp() {
     const router = useRouter();
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [agree, setAgree] = useState(false)
     const [password, setPassword] = useState("")
 
     const [fontsLoaded] = useFonts({
@@ -28,14 +27,9 @@ export default function signUp() {
 
     return (
         <View style={styles.container}>
-                <View style={{ width: 303, marginBottom: 62 }}>
-                    <Link href="/" style={{ width: 140 }}>
-                        <View style={{ gap: 16, flexDirection: "row", justifyContent: "flex-start", alignItems: "center" }}>
-                            <Image source={require("@/assets/images/backArrow.png")} style={{ width: 19, height: 18 }} />
-                            <Text style={{ fontFamily: "Montserrat", fontSize: 26, fontWeight: "500", color: Colors.primary }}>Sign Up</Text>
-                        </View>
-                    </Link>
-                </View>
+            <View style={{ width: 303, marginBottom: 25 }}>
+                <BackButton title="Sign In" />
+            </View>
 
             <View>
                 <Text style={styles.inputTitle}>E-mail</Text>
@@ -52,7 +46,7 @@ export default function signUp() {
 
             <View style={{ marginTop: 43, marginBottom: 50, justifyContent: "center", alignItems: "center" }}>
                 <PrimaryButton title="Sign Up" onPress={() => {
-                    router.push("/")
+                    router.push("/home")
                     handleSubmit()
                 }} />
 

@@ -7,6 +7,7 @@ import GoogleButton from "@/components/GoogleButton";
 import CheckBox from "@/components/CheckBox";
 import Colors from "@/constants/colors";
 import PasswordInput from "@/components/PasswordInput";
+import BackButton from "@/components/BackButton";
 
 export default function signUp() {
     const router = useRouter();
@@ -28,13 +29,8 @@ export default function signUp() {
 
     return (
         <View style={styles.container}>
-            <View style={{ width: 303, marginBottom: 15 }}>
-                <Link href="/" style={{ width: 140 }}>
-                    <View style={{ gap: 16, flexDirection: "row", justifyContent: "flex-start", alignItems: "center" }}>
-                        <Image source={require("@/assets/images/backArrow.png")} style={{ width: 19, height: 18 }} />
-                        <Text style={{ fontFamily: "Montserrat", fontSize: 26, fontWeight: "500", color: Colors.primary }}>Sign Up</Text>
-                    </View>
-                </Link>
+            <View style={{ width: 303, marginBottom: 25 }}>
+                <BackButton title="Sign Up" />
             </View>
 
             <View>
