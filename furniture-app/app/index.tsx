@@ -4,13 +4,16 @@ import { useRouter, Link } from "expo-router";
 import { useFonts } from "expo-font";
 import PrimaryButton from "@/components/PrimaryButton";
 import Colors from "@/constants/colors";
+import Fonts from "@/constants/fonts";
 
 export default function SplashScreen() {
     const router = useRouter();
     const [fontsLoaded] = useFonts({
         Montserrat: require("@/assets/fonts/Montserrat-VariableFont_wght.ttf"),
-        DMSans: require("@/assets/fonts/DMSans-VariableFont_opsz,wght.ttf")
+        DMSans: require("@/assets/fonts/DMSans-VariableFont_opsz,wght.ttf"),
+        NunitoSans: require("@/assets/fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf")
     })
+    if (!fontsLoaded) return null;
 
     // @ts-ignore
     return (
@@ -42,14 +45,14 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.background,
     },
     link: {
-        fontFamily: "Montserrat",
+        fontFamily: Fonts.montserrat,
         fontSize: 16,
         fontWeight: "bold",
         color: Colors.primary,
         marginTop: 30,
     },
     text: {
-        fontFamily: "DMSans",
+        fontFamily: Fonts.dmsans,
         fontSize: 40,
         fontWeight: "bold",
         color: Colors.text,

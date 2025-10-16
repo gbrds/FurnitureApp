@@ -6,6 +6,7 @@ import PrimaryButton from "@/components/PrimaryButton";
 import GoogleButton from "@/components/GoogleButton";
 import CheckBox from "@/components/CheckBox";
 import Colors from "@/constants/colors";
+import Fonts from "@/constants/fonts";
 import PasswordInput from "@/components/PasswordInput";
 import BackButton from "@/components/BackButton";
 
@@ -15,10 +16,6 @@ export default function signUp() {
     const [email, setEmail] = useState("");
     const [agree, setAgree] = useState(false)
     const [password, setPassword] = useState("")
-
-    const [fontsLoaded] = useFonts({
-        Montserrat: require("@/assets/fonts/Montserrat-VariableFont_wght.ttf"),
-    })
 
     const handleSubmit = () => {
         console.log("Name: ", name)
@@ -105,7 +102,7 @@ const styles = StyleSheet.create({
         marginBottom: 12,
     },
     inputTitle: {
-        fontFamily: "Montserrat",
+        fontFamily: Fonts.montserrat,
         fontWeight: "400",
         fontSize: 14,
         marginTop: 10,
@@ -113,12 +110,12 @@ const styles = StyleSheet.create({
         color: Colors.primary,
     },
     signUpLink: {
-        fontFamily: "Montserrat",
+        fontFamily: Fonts.montserrat,
         fontWeight: "bold",
         fontSize: 14,
     },
     signUpText: {
-        fontFamily: "Montserrat",
+        fontFamily: Fonts.montserrat,
         fontWeight: "500",
         fontSize: 14,
         color: Colors.primary,

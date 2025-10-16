@@ -5,6 +5,7 @@ import { useFonts } from "expo-font";
 import PrimaryButton from "@/components/PrimaryButton";
 import GoogleButton from "@/components/GoogleButton";
 import Colors from "@/constants/colors";
+import Fonts from "@/constants/fonts";
 import PasswordInput from "@/components/PasswordInput";
 import BackButton from "@/components/BackButton";
 
@@ -13,10 +14,6 @@ export default function signUp() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
-
-    const [fontsLoaded] = useFonts({
-        Montserrat: require("@/assets/fonts/Montserrat-VariableFont_wght.ttf"),
-    })
 
     const handleSubmit = () => {
         console.log("Name: ", name)
@@ -45,7 +42,7 @@ export default function signUp() {
             </View>
 
             <View style={{ marginTop: 43, marginBottom: 50, justifyContent: "center", alignItems: "center" }}>
-                <PrimaryButton title="Sign Up" onPress={() => {
+                <PrimaryButton title="Sign In" onPress={() => {
                     router.push("/home")
                     handleSubmit()
                 }} />
@@ -87,7 +84,7 @@ const styles = StyleSheet.create({
         marginBottom: 12,
     },
     inputTitle: {
-        fontFamily: "Montserrat",
+        fontFamily: Fonts.montserrat,
         fontWeight: "400",
         fontSize: 14,
         marginTop: 10,
@@ -95,12 +92,12 @@ const styles = StyleSheet.create({
         color: Colors.primary,
     },
     signUpLink: {
-        fontFamily: "Montserrat",
+        fontFamily: Fonts.montserrat,
         fontWeight: "bold",
         fontSize: 14,
     },
     signUpText: {
-        fontFamily: "Montserrat",
+        fontFamily: Fonts.montserrat,
         fontWeight: "500",
         fontSize: 14,
         color: Colors.primary,
