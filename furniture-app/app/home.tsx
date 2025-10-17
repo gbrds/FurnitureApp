@@ -16,7 +16,8 @@ export default function Home() {
 
     return (
         <>
-            <View>
+            <HomeTabs />
+            <View style={styles.container}>
                 <FlatList
                     data={products}
                     renderItem={renderItem}
@@ -27,14 +28,12 @@ export default function Home() {
                     contentContainerStyle={{ paddingBottom: 20 }}
                 />
             </View>
-            <HomeTabs />
         </>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
       paddingHorizontal: 8,
       paddingTop: 16,
     },
